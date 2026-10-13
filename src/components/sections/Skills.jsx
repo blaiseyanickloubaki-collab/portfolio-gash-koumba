@@ -4,27 +4,24 @@ import * as Icons from 'lucide-react';
 import FadeIn from "../animations/FadeIn";
 
 const Skills = () => {
-  // Categorize skills dynamically based on your comprehensive stack
+  // Regroupement dynamique selon les 3 axes majeurs
   const skillCategories = {
-    'Web & Mobile Development': skills.filter(s => [
-      'HTML & CSS', 'JavaScript', 'Tailwind CSS','React.js', 'Next.js', 'TypeScript', 
-      'Flutter & Dart', 'React Native', 'PHP', 'C++'
+    'Automatisme & Supervision': skills.filter(s => [
+      'Commande & API (Ladder, FBD, ST)', 'Supervision des Processus', 
+      'Schémas P&ID & Boucles', 'Capteurs & Instrumentation', 'Réseaux Industriels'
     ].includes(s.name)),
     
-    'Backend, Databases & Cloud': skills.filter(s => [
-      'Python', 'Django & DRF', 'Flask & FastAPI', 
-      'SQL & MySQL', 'PostgreSQL & SQLite', 'MongoDB', 
-      'Linux & Bash', 'Docker', 'Git & GitHub', 'MLflow, DVC & CI/CD', 'AWS'
+    'Gestion de Projet & Ingénierie': skills.filter(s => [
+      'Gestion de Projets EPC', 'Planification (MS Project)', 
+      'Suivi Budgétaire & Pilotage', 'Dessin Technique (AutoCAD)', 'Gestion de Stocks & Logistique'
     ].includes(s.name)),
     
-    'AI, Deep Learning & Robotics': skills.filter(s => [
-      'NumPy & Pandas', 'Scikit-Learn', 'TensorFlow', 
-      'Computer Vision & OpenCV', 'YOLOv8', 'Transformers & NLP', 
-      'LangChain & Hugging Face', 'Arduino, Raspberry Pi & Jetson', 'ROS 2 & Drone Programming'
+    'Informatique & Développement': skills.filter(s => [
+      'Python', 'PHP & Web Development', 'Bases de Données (SQL)', 
+      'Java, Dart & Flutter', 'Maintenance & IT Réseaux'
     ].includes(s.name)),
   };
 
-  // Get proficiency percentage
   const getProficiencyLevel = (level) => {
     const levels = {
       'Expert': 95,
@@ -34,7 +31,6 @@ const Skills = () => {
     return levels[level] || 50;
   };
 
-  // Get level color
   const getLevelColor = (level) => {
     const colors = {
       'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
@@ -44,9 +40,18 @@ const Skills = () => {
     return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
   };
 
+  const getLevelLabelInFrench = (level) => {
+    const labels = {
+      'Expert': 'Expert',
+      'Advanced': 'Avancé',
+      'Intermediate': 'Intermédiaire',
+    };
+    return labels[level] || level;
+  };
+
   return (
     <section id="skills" className="relative py-20 bg-black overflow-hidden">
-      {/* Animated Background Gradients */}
+      {/* Background Gradients */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
         <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
@@ -57,22 +62,22 @@ const Skills = () => {
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
               <Icons.Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium">My Expertise</span>
+              <span className="text-sm text-primary font-medium">Mon Expertise</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
-              Skills & Technologies
+              Compétences & Tech Stack
             </h2>
             <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              A comprehensive overview of my technical skills and proficiency levels
+              Aperçu complet de mes domaines de maîtrise en automatisme, gestion EPC et informatique
             </p>
           </div>
         </FadeIn>
 
-        {/* Skills Categories */}
+        {/* Categories Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {Object.entries(skillCategories).map(([category, categorySkills], categoryIndex) => (
             <FadeIn key={category} delay={categoryIndex * 100}>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group">
+              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group h-full">
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
                   <div className="w-1 h-8 bg-linear-to-b from-primary/30 to-primary/10 rounded-full"></div>
                   <h3 className="text-xl font-medium text-white">{category}</h3>
@@ -101,7 +106,7 @@ const Skills = () => {
                             </div>
                           </div>
                           <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>
-                            {skill.level}
+                            {getLevelLabelInFrench(skill.level)}
                           </span>
                         </div>
 
@@ -117,7 +122,6 @@ const Skills = () => {
                   })}
                 </div>
 
-                {/* Hover Glow Effect */}
                 <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none"></div>
               </div>
             </FadeIn>

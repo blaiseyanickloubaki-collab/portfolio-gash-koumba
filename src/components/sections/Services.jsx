@@ -30,18 +30,18 @@ const Services = () => {
           <div className="flex flex-col items-center text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6">
               <Wrench className="w-3.5 h-3.5" />
-              <span>WHAT I OFFER</span>
+              <span>CE QUE JE PROPOSE</span>
             </div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-4 max-w-2xl">
-              Engineering smart web, mobile, and autonomous systems.
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-4 max-w-3xl">
+              Solutions en Ingénierie, Automatisme & Gestion de Projets
             </h2>
-            <p className="text-white/60 text-base sm:text-lg max-w-xl">
-              Comprehensive solutions to transform your ideas into exceptional digital experiences.
+            <p className="text-white/60 text-base sm:text-lg max-w-2xl">
+              Un accompagnement technique rigoureux pour la planification, le pilotage et l'optimisation de vos installations industrielles et systèmes informatiques.
             </p>
           </div>
         </FadeIn>
 
-        {/* Bento Grid - Rangée du haut (2 cartes principales si disponibles) */}
+        {/* Bento Grid - Rangée du haut (2 cartes majeures : Gestion EPC & Automatisme) */}
         {services.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             {services.slice(0, 2).map((service, index) => {
@@ -70,7 +70,7 @@ const Services = () => {
           </div>
         )}
 
-        {/* Bento Grid - Rangée du bas (Cartes secondaires restantes) */}
+        {/* Bento Grid - Rangée du bas (4 cartes secondaires) */}
         {services.length > 2 && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {services.slice(2).map((service, index) => {

@@ -1,38 +1,29 @@
 export const testimonials = [
   {
     id: 1,
-    name: 'Sarah Mitchell',
-    role: 'CTO',
-    company: 'TechStart Inc.',
+    name: 'Chef de Projet Senior',
+    role: 'Project Manager',
+    company: 'Secteur Oil & Gas / EPC',
     image: '/images/testimonials/person1.jpg',
-    quote: 'Outstanding work on our React application. Yanick delivered a high-performance, scalable solution.',
+    quote: 'Gash a fait preuve d\'une excellente rigueur dans la planification MS Project et le suivi terrain du projet Litchendjili. Un profil très méthodique.',
     rating: 5
   },
   {
     id: 2,
-    name: 'Michael Chen',
-    role: 'Product Manager',
-    company: 'Digital Innovations',
+    name: 'Ingénieur Instrumentation',
+    role: 'Responsable Technique',
+    company: 'Projets Industriels',
     image: '/images/testimonials/person2.jpg',
-    quote: 'Working with Yanick was a game-changer for our project. The UI components were beautifully designed.',
+    quote: 'Sa maîtrise des schémas P&ID, des tests de boucles et sa réactivité sur le site ont grandement facilité la réception des vannes et skids de mesure.',
     rating: 5
   },
   {
     id: 3,
-    name: 'Emily Rodriguez',
-    role: 'Founder',
-    company: 'StartupHub',
+    name: 'Responsable IT & Systèmes',
+    role: 'Directeur des Systèmes d\'Information',
+    company: 'Services & Digitalisation',
     image: '/images/testimonials/person3.jpg',
-    quote: 'Yanick transformed our vision into reality with a stunning, user-friendly interface. The project was delivered on time.',
-    rating: 5
-  },
-  {
-    id: 4,
-    name: 'David Thompson',
-    role: 'Lead Developer',
-    company: 'WebSolutions Co.',
-    image: '/images/testimonials/person4.jpg',
-    quote: 'Incredible expertise in React and modern web technologies. Yanick not only built our application but also improved code quality.',
+    quote: 'Capacité remarquable à modéliser des bases de données et concevoir des tableaux de bord interactifs pour simplifier le reporting opérationnel.',
     rating: 5
   }
 ];

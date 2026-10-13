@@ -1,89 +1,66 @@
 import React from 'react';
-import { ExternalLink, Code, TrendingUp } from 'lucide-react';
+import { CheckCircle, Building2 } from 'lucide-react';
 
 const ProjectCard = ({ project }) => {
-  if (!project) return null;
-
-  const { title, description, image, technologies = [], metrics, demoUrl, githubUrl } = project;
-
   return (
-    <div className="relative group bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300 flex flex-col h-full">
-      {/* Container Image */}
-      <div className="relative h-48 overflow-hidden">
+    <div className="relative bg-white/5 border border-white/10 rounded-2xl overflow-hidden hover:border-primary/40 transition-all duration-300 group h-full flex flex-col">
+      {/* Image Container */}
+      <div className="relative aspect-16/10 overflow-hidden bg-black/40">
         <img
-          src={image}
-          alt={title || "Project"}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
-
-        {/* Overlay sombre */}
-        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-        {/* Badge Catégorie (En haut à gauche comme le prof) */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent" />
+        
+        {/* Category Tag */}
         <div className="absolute top-4 left-4">
-          <span className="text-xs px-2.5 py-1 rounded-full bg-black/60 border border-white/10 text-white/80 backdrop-blur-md">
-            {project?.category}
+          <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/15 rounded-full text-xs font-medium text-primary">
+            {project.category}
           </span>
-        </div>
-
-        {/* Liens Demo & Code (En bas à droite sur l'image comme le prof) */}
-        <div className="absolute bottom-4 right-4 flex items-center gap-2">
-          {demoUrl && (
-            <a
-              href={demoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-black/60 border border-white/10 rounded-lg text-white/80 hover:text-white hover:border-primary/50 transition-all"
-              title="View Demo"
-            >
-              <ExternalLink className="w-4 h-4" />
-            </a>
-          )}
-          {githubUrl && (
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 bg-black/60 border border-white/10 rounded-lg text-white/80 hover:text-white hover:border-primary/50 transition-all"
-              title="View Code"
-            >
-              <Code className="w-4 h-4" />
-            </a>
-          )}
         </div>
       </div>
 
-      {/* Contenu de la Carte */}
-      <div className="p-6 flex flex-col flex-grow justify-between">
+      {/* Content Container */}
+      <div className="p-6 flex flex-col flex-1 justify-between">
         <div>
-          <h3 className="text-xl font-medium text-white group-hover:text-primary transition-colors mb-2">
-            {title}
+          <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-primary transition-colors">
+            {project.title}
           </h3>
-          <p className="text-sm text-white/60 mb-4 line-clamp-2">
-            {description}
+
+          {/* Client badge if present */}
+          {project.client && (
+            <div className="flex items-center gap-2 text-xs text-white/50 mb-3">
+              <Building2 className="w-3.5 h-3.5 text-primary" />
+              <span>{project.client}</span>
+            </div>
+          )}
+
+          <p className="text-sm text-white/70 leading-relaxed mb-4">
+            {project.description}
           </p>
         </div>
 
         <div>
-          {/* Badges Technologies */}
+          {/* Tech Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
-            {technologies?.map((tech, index) => (
+            {project.technologies.map((tech, index) => (
               <span
                 key={index}
-                className="text-xs px-2.5 py-1 rounded-md bg-white/5 border border-white/10 text-white/70"
+                className="px-2.5 py-1 bg-white/5 border border-white/10 rounded-md text-xs text-white/80"
               >
                 {tech}
               </span>
             ))}
           </div>
 
-          {/* Section Métriques (En Vert comme le prof) */}
-          {metrics && (
-            <div className="flex items-center gap-2 text-xs text-primary pt-2 border-t border-white/10">
-              <TrendingUp className="w-3.5 h-3.5" />
-              <p className="text-primary font-medium">{metrics}</p>
+          {/* Metric / Result Footer */}
+          <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs text-primary font-medium">
+            <div className="flex items-center gap-1.5">
+              <CheckCircle className="w-4 h-4 text-primary" />
+              <span>{project.metrics}</span>
             </div>
-          )}
+          </div>
         </div>
       </div>
     </div>

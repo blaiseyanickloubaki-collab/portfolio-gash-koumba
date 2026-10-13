@@ -1,14 +1,14 @@
 export const PERSONAL_INFO = {
-  name: 'Yanick Loubaki',
-  title: 'Full-Stack AI & Robotics Engineer',
-  email: 'blaiseyanickloubaki@gmail.com',
-  location: 'Republic of congo',
-  tagline: 'Crafting seamless digital experiences with modern web technologies.',
+  name: 'Gash Dieuveil KOUMBA',
+  title: 'Ingénieur Informaticien Industriel – Chef de Projet',
+  email: 'koumbagash@gmail.com',
+  location: 'Pointe-Noire, Congo',
+  tagline: 'Ingénierie, gestion de projet et optimisation des processus industriels.',
   resume: '/resume.pdf',
   bio: [
-    "I'm a passionate engineer combining web development and artificial intelligence, with strong expertise in building modern, scalable applications.",
-    "My expertise spans the entire tech stack—from React and Web/Mobile interfaces to Computer Vision algorithms (OpenCV) and Deep Learning models (TensorFlow).",
-    "When I'm not training models or optimizing frontend performance, you'll find me exploring real-time AI solutions and robotics integrations."
+    "Congolais extrêmement déterminé, je m’inscris comme un acteur de développement et d’optimisation à divers métiers liés à l’ingénierie, la gestion et l’industrie.",
+    "Je suis dynamique, pragmatique, avec une capacité d’adaptation, un esprit d’analyse et de synthèse, un sens de la responsabilité et de la persévérance.",
+    "Je suis doté d’un bon esprit d’équipe et d’intégration."
   ]
 };
 
@@ -20,22 +20,22 @@ export const SOCIAL_LINKS = {
 };
 
 export const STATS = [
-  { label: 'Years Experience', value: '1+' },
-  { label: 'Projects Completed', value: '50+' },
-  { label: 'Technologies', value: '15+' },
-  { label: 'Client Satisfaction', value: '98%' }
+  { label: 'Projets Pilotés', value: '7+' },      // Rosetti Congo (Litchendjili, Torchère Mboundi...)[cite: 17]
+  { label: 'Années d’Expérience', value: '5+' },  // Expériences cumulées depuis 2020[cite: 15, 17]
+  { label: 'Compétences & Outils', value: '15+' },// Automatisme, P&ID, MS Project, Python, PHP...
+  { label: 'Formations & Diplômes', value: '6+' }  // Master, Licence, BTS + Formations certifiantes[cite: 14, 17]
 ];
 
 export const ABOUT_STATS = [
-  { label: 'Happy Clients', value: '45+' },
-  { label: 'Code Commits', value: '2.5K+' },
-  { label: 'GitHub Stars', value: '500+' }
+  { label: 'Projets EPC Pilotés', value: '7+' },
+  { label: 'Années d’Expérience', value: '5+' },
+  { label: 'Projets Réussis', value: '100%' }
 ];
 
 export const NAV_LINKS = [
-  { id: 'about', label: 'About' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'projects', label: 'Projects' },
+  { id: 'about', label: 'À Propos' },
+  { id: 'skills', label: 'Compétences' },
+  { id: 'projects', label: 'Expérience' },
   { id: 'services', label: 'Services' },
   { id: 'contact', label: 'Contact' }
 ];

@@ -82,11 +82,11 @@ const Footer = () => {
             </div>
           </FadeIn>
 
-          {/* Colonne 2 : Quick Links avec puces */}
+          {/* Colonne 2 : Liens Rapides */}
           <FadeIn delay={100}>
             <div className="space-y-4">
               <h4 className="text-sm font-semibold tracking-wider uppercase text-white">
-                Quick Links
+                Liens Rapides
               </h4>
               <ul className="space-y-3 text-sm text-white/60 list-disc list-inside">
                 {NAV_LINKS.map((link) => (
@@ -103,14 +103,14 @@ const Footer = () => {
             </div>
           </FadeIn>
 
-          {/* Colonne 3 : Connect With Me */}
+          {/* Colonne 3 : Restez Connecté */}
           <FadeIn delay={200}>
             <div className="space-y-4">
               <h4 className="text-sm font-semibold tracking-wider uppercase text-white">
-                Connect With Me
+                Restez Connecté
               </h4>
               <p className="text-white/60 text-sm leading-relaxed">
-                Let's connect and create something amazing together.
+                Collaborons ensemble pour donner vie à vos projets d'ingénierie.
               </p>
               <div className="flex items-center gap-3 pt-2">
                 {Object.entries(SOCIAL_LINKS).map(([platform, url]) => (
@@ -119,7 +119,7 @@ const Footer = () => {
                     href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    aria-label={`Connect on ${platform}`}
+                    aria-label={`Se connecter via ${platform}`}
                     className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
                   >
                     <SocialIcon name={platform} />
@@ -135,10 +135,10 @@ const Footer = () => {
         <FadeIn delay={300}>
           <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
             <p>
-              &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. All rights reserved.
+              &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Tous droits réservés.
             </p>
             <p className="flex items-center gap-1.5">
-              Built with <Heart className="w-3.5 h-3.5 text-primary fill-primary" /> using React & Tailwind CSS
+              Conçu avec <Heart className="w-3.5 h-3.5 text-primary fill-primary" /> en React & Tailwind CSS
             </p>
           </div>
         </FadeIn>

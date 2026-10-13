@@ -1,18 +1,18 @@
 import React from 'react';
-import { Download, Code2, Sparkles, Cpu, Bot, Cloud, Terminal, Database, Layers } from 'lucide-react';
+import { Download, Code2, Sparkles, Cpu, Cloud, Terminal, Database, Layers, CheckCircle, Briefcase } from 'lucide-react';
 import { PERSONAL_INFO, ABOUT_STATS } from '../../utils/constants';
 import FadeIn from '../animations/FadeIn';
 import RadialGradientBackground from '../backgrounds/RadialGradientBackground';
 
 const About = () => {
-  // Skills mis à jour avec des icônes 100% sécurisées (Lucide React)
+  // Compétences clés adaptées au profil de Gash Koumba
   const skills = [
-    { name: "Python & AI", icon: Terminal },
-    { name: "TensorFlow & Deep Learning", icon: Cpu },
-    { name: "Computer Vision", icon: Sparkles },
-    { name: "Robotics & ROS 2", icon: Bot },
-    { name: "AWS & Cloud", icon: Cloud },
-    { name: "Full-Stack Web/Mobile", icon: Layers },
+    { name: "Automatisme & PLC", icon: Cpu },
+    { name: "Supervision & P&ID", icon: Layers },
+    { name: "Gestion Projets EPC", icon: Briefcase },
+    { name: "Programmation Python/PHP", icon: Terminal },
+    { name: "Bases de Données & SQL", icon: Database },
+    { name: "Réseaux Industriels", icon: Cloud },
   ];
 
   return (
@@ -29,7 +29,7 @@ const About = () => {
                 <div className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-primary/30 bg-primary/10 rounded-full w-fit">
                   <Code2 className="w-4 h-4 text-primary" />
                   <span className="text-sm text-primary font-medium">
-                    Full-Stack AI and Robotic Engineer
+                    Ingénieur Informaticien Industriel – Chef de Projet
                   </span>
                   <Sparkles className="w-4 h-4 text-primary" />
                 </div>
@@ -37,7 +37,7 @@ const About = () => {
 
               <FadeIn delay={100}>
                 <h2 className="text-4xl lg:text-5xl font-normal text-white leading-tight">
-                  Crafting Digital Experiences That Matter
+                  Expertise en Ingénierie & Gestion de Projets Industriels
                 </h2>
               </FadeIn>
 
@@ -73,7 +73,7 @@ const About = () => {
                   className="inline-flex items-center gap-3 bg-white hover:bg-white/90 text-black rounded-full px-8 py-4 text-base font-medium transition-all duration-300 w-fit group cursor-pointer"
                 >
                   <Download className="w-5 h-5 group-hover:translate-y-0.5 transition-transform duration-300" />
-                  Download Resume
+                  Télécharger le CV
                 </button>
               </FadeIn>
             </div>
@@ -83,50 +83,50 @@ const About = () => {
           <FadeIn delay={200}>
             <div className="grid grid-cols-2 gap-4">
 
-              {/* Card 1: Expertise */}
+              {/* Card 1: Expertise Automatisme & P&ID */}
               <div className="col-span-2 relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300">
                   <div className="flex items-start gap-4">
                     <div className="p-3 bg-primary/10 rounded-xl">
-                      <Bot className="w-6 h-6 text-primary" />
+                      <Cpu className="w-6 h-6 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-semibold text-white mb-2">AI & Robotics Expertise</h3>
+                      <h3 className="text-lg font-semibold text-white mb-2">Génie Électrique & Automatique</h3>
                       <p className="text-sm text-white/70 leading-relaxed">
-                        Specialized in designing intelligent systems, computer vision models, and autonomous robotic solutions bridging software and hardware.
+                        Commande et supervision des systèmes automatisés (PLC, Ladder, FBD, ST), câblage d'instrumentation et lecture de schémas de boucle & P&ID.
                       </p>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Card 2: Clean Code */}
+              {/* Card 2: Gestion EPC */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
                   <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
-                    <Cpu className="w-5 h-5 text-primary" />
+                    <Briefcase className="w-5 h-5 text-primary" />
                   </div>
                   <div>
-                    <h3 className="text-base font-semibold text-white mb-2">Deep Learning</h3>
+                    <h3 className="text-base font-semibold text-white mb-2">Gestion Projets EPC</h3>
                     <p className="text-sm text-white/70 leading-relaxed">
-                      Building neural networks, NLP models, and MLOps pipelines.
+                      Planification, suivi budgétaire, coordination des travaux et pilotage de projets pétroliers/industriels majeurs.
                     </p>
                   </div>
                 </div>
               </div>
 
-              {/* Card 3: Performance */}
+              {/* Card 3: Informatique & Web */}
               <div className="relative group">
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl blur-xl opacity-50 group-hover:opacity-75 transition-opacity duration-300"></div>
                 <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 h-full">
                   <div className="p-3 bg-primary/10 rounded-xl w-fit mb-4">
-                    <Cloud className="w-5 h-5 text-primary" />
+                    <Terminal className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="text-base font-semibold text-white mb-2">Cloud & Scale</h3>
+                  <h3 className="text-base font-semibold text-white mb-2">Informatique Industrielle</h3>
                   <p className="text-sm text-white/70 leading-relaxed">
-                    Deploying robust applications and cloud architectures (AWS, Docker).
+                    Développement d'outils de gestion, bases de données (SQL), scripts (Python, PHP) et maintenance des systèmes réseaux.
                   </p>
                 </div>
               </div>
@@ -138,15 +138,15 @@ const About = () => {
                   <div className="grid grid-cols-3 gap-6 text-center">
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">100%</div>
-                      <div className="text-xs text-white/60">Client Satisfaction</div>
+                      <div className="text-xs text-white/60">Conformité & Rigueur</div>
                     </div>
                     <div>
                       <div className="text-2xl font-bold text-primary mb-1">24/7</div>
-                      <div className="text-xs text-white/60">Support Available</div>
+                      <div className="text-xs text-white/60">Disponibilité Terrain</div>
                     </div>
                     <div>
-                      <div className="text-2xl font-bold text-primary mb-1">Fast</div>
-                      <div className="text-xs text-white/60">Delivery Time</div>
+                      <div className="text-2xl font-bold text-primary mb-1">EPC</div>
+                      <div className="text-xs text-white/60">Secteur Pétrole & Gaz</div>
                     </div>
                   </div>
                 </div>
@@ -156,16 +156,15 @@ const About = () => {
           </FadeIn>
         </div>
 
-
         {/* Skills Grid Section */}
         <FadeIn delay={500}>
           <div className="flex flex-col items-center gap-8">
             <div className="text-center">
               <h3 className="text-2xl font-normal text-white mb-2">
-                Tech Stack & Expertise
+                Domaines d'Expertise & Technologies
               </h3>
               <p className="text-sm text-white/60">
-                Technologies I work with to build amazing products
+                Les outils et compétences clés appliqués au quotidien
               </p>
             </div>
 

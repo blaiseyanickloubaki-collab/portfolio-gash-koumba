@@ -49,19 +49,19 @@ const Contact = () => {
     e.preventDefault();
 
     if (!formData.name || !formData.email || !formData.message) {
-      setStatus({ type: 'error', message: 'Please fill in all fields' });
+      setStatus({ type: 'error', message: 'Veuillez remplir tous les champs.' });
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(formData.email)) {
-      setStatus({ type: 'error', message: 'Please enter a valid email' });
+      setStatus({ type: 'error', message: 'Veuillez entrer une adresse email valide.' });
       return;
     }
 
     setStatus({
       type: 'success',
-      message: "Message sent successfully! I'll get back to you soon.",
+      message: "Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
     });
     setFormData({ name: '', email: '', message: '' });
 
@@ -81,13 +81,13 @@ const Contact = () => {
           <div className="flex flex-col items-center text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6">
               <MessageSquare className="w-3.5 h-3.5" />
-              <span>Get In Touch</span>
+              <span>Contactez-moi</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-4">
-              Let's Work Together
+              Travaillons Ensemble
             </h2>
             <p className="text-white/60 text-base sm:text-lg max-w-xl">
-              Have a project in mind? Let's discuss how we can bring your ideas to life.
+              Un projet industriel, une mission d'ingénierie ou une collaboration ? Discutons-en dès aujourd'hui.
             </p>
           </div>
         </FadeIn>
@@ -100,7 +100,7 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-xs font-medium text-white/70 mb-2">
-                    Name
+                    Nom / Entreprise
                   </label>
                   <input
                     type="text"
@@ -109,7 +109,7 @@ const Contact = () => {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm"
-                    placeholder="Your name"
+                    placeholder="Votre nom ou nom d'entreprise"
                   />
                 </div>
 
@@ -124,7 +124,7 @@ const Contact = () => {
                     value={formData.email}
                     onChange={handleChange}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm"
-                    placeholder="your.email@example.com"
+                    placeholder="votre.email@exemple.com"
                   />
                 </div>
 
@@ -139,7 +139,7 @@ const Contact = () => {
                     onChange={handleChange}
                     rows={5}
                     className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm resize-none"
-                    placeholder="Tell me about your project..."
+                    placeholder="Décrivez votre besoin ou votre projet..."
                   />
                 </div>
 
@@ -147,7 +147,7 @@ const Contact = () => {
                   type="submit"
                   className="w-full py-3.5 px-6 rounded-xl bg-primary text-black font-semibold text-sm hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
-                  <span>Send Message</span>
+                  <span>Envoyer le Message</span>
                   <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
 
@@ -171,15 +171,15 @@ const Contact = () => {
             <div className="space-y-8 lg:pt-4">
               <div>
                 <h3 className="text-xl font-semibold text-white mb-3">
-                  Let's Connect
+                  Restons en Contact
                 </h3>
                 <p className="text-white/60 text-sm leading-relaxed">
-                  I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision. Feel free to reach out!
+                  Toujours ouvert à l'étude de nouvelles opportunités professionnelles, de missions d'ingénierie EPC ou de projets en automatisme et informatique. N'hésitez pas à me contacter !
                 </p>
               </div>
 
               <div className="space-y-4">
-                {/* Mail Card - Interactive au survol */}
+                {/* Mail Card */}
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
                   className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 group hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-pointer block"
@@ -201,7 +201,7 @@ const Contact = () => {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/40 mb-0.5">Location</p>
+                    <p className="text-xs text-white/40 mb-0.5">Localisation</p>
                     <p className="text-sm text-white font-medium">
                       {PERSONAL_INFO.location}
                     </p>
@@ -209,9 +209,9 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Social Links avec Vrais Logos SVG */}
+              {/* Social Links */}
               <div>
-                <p className="text-xs text-white/40 mb-3">Connect with me</p>
+                <p className="text-xs text-white/40 mb-3">Retrouvez-moi sur</p>
                 <div className="flex items-center gap-3">
                   {Object.entries(SOCIAL_LINKS).slice(0, 3).map(([platform, url]) => (
                     <a

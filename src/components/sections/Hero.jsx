@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { ChevronDown, Star } from 'lucide-react';
-import { SiReact, SiTensorflow, SiTailwindcss,SiPython, SiOpencv } from 'react-icons/si';
+import { ChevronDown, Star, Cpu, Terminal, Layers } from 'lucide-react';
+import { SiPython, SiPhp } from 'react-icons/si';
 import { PERSONAL_INFO, STATS } from '../../utils/constants';
 import { scrollToSection } from '../../hooks/useScrollSpy';
 import FadeIn from '../animations/FadeIn';
@@ -21,30 +21,30 @@ const Hero = () => {
               <div className="inline-flex items-center gap-2.5 px-[18px] py-[11px] mb-8 bg-linear-to-r from-primary/10 via-primary/15 to-primary/20 border border-primary/20 rounded-full">
                 <Star className="w-4 h-4 text-white fill-white" />
                 <span className="text-xs md:text-sm text-white tracking-[1.2px]">
-                  {PERSONAL_INFO.title} | Based in {PERSONAL_INFO.location}
+                  {PERSONAL_INFO.title} | Basé en {PERSONAL_INFO.location}
                 </span>
               </div>
             </FadeIn>
 
             <FadeIn delay={100}>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-normal text-white mb-6 leading-tight">
-                Full-Stack AI & Robotics Engineer
+                Ingénieur Informaticien Industriel – Chef de Projet
               </h1>
             </FadeIn>
 
             <FadeIn delay={200}>
               <p className="text-lg text-white/70 max-w-[550px] mb-8">
-                Engineering end-to-end intelligent systems—from modern Web & Mobile apps to cloud-native DevOps, cutting-edge AI (Agentic AI, MLOps, LLMOps, Computer Vision), and ROS 2 robotics.
+                Acteur de développement et d’optimisation dans l’ingénierie électrique, l'automatique, l'informatique industrielle et la gestion de projets EPC.
               </p>
             </FadeIn>
 
             <FadeIn delay={300}>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="inline-flex items-center gap-0 mb-12 group"
+                className="inline-flex items-center gap-0 mb-12 group cursor-pointer"
               >
-                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-[26px] py-[13px] text-base font-medium border border-white">
-                  Get in Touch
+                <div className="relative z-10 bg-white text-[#212121] rounded-[17px] px-[26px] py-[13px] text-base font-medium border border-white hover:bg-white/90 transition-colors">
+                  Me contacter
                 </div>
               </button>
             </FadeIn>
@@ -77,7 +77,7 @@ const Hero = () => {
                 <div className="relative rounded-2xl overflow-hidden m-[1px] h-[calc(100%-2px)]">
                   <img
                     src="/developer-portrait.png"
-                    alt="Developer at work"
+                    alt="Gash Koumba"
                     className="w-full h-full object-cover"
                   />
                 </div>
@@ -86,24 +86,29 @@ const Hero = () => {
                 <div className="absolute bottom-6 left-6 z-20">
                   <FadeIn delay={500}>
                     <div className="flex items-center gap-4 bg-black/40 backdrop-blur-sm border border-white/10 rounded-full px-6 py-3">
-                      <div className="w-6 h-6 flex items-center justify-content hover:scale-110 transition-transform duration-300">
-                        <SiReact className="w-full h-full text-primary" />
+                      {/* Automatisme / API / PLC */}
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Automatisme & API">
+                        <Cpu className="w-full h-full text-primary" />
                       </div>
 
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiTensorflow className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiOpencv className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
-                        <SiTailwindcss className="w-full h-full text-primary" />
-                      </div>
-
-                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300">
+                      {/* Python */}
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Python">
                         <SiPython className="w-full h-full text-primary" />
+                      </div>
+
+                      {/* PHP / SQL */}
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300" title="PHP & SQL">
+                        <SiPhp className="w-full h-full text-primary" />
+                      </div>
+
+                      {/* Schemas P&ID / AutoCAD */}
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300" title="P&ID & Instrumentation">
+                        <Layers className="w-full h-full text-primary" />
+                      </div>
+
+                      {/* Informatique / Réseaux */}
+                      <div className="w-6 h-6 flex items-center justify-center hover:scale-110 transition-transform duration-300" title="Réseaux Industriels & Maintenance">
+                        <Terminal className="w-full h-full text-primary" />
                       </div>
                     </div>
                   </FadeIn>
