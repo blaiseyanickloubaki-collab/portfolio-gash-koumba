@@ -2,7 +2,7 @@ export const PERSONAL_INFO = {
   name: 'Gash Dieuveil KOUMBA',
   title: 'Ingénieur Informaticien Industriel – Chef de Projet',
   email: 'koumbagash@gmail.com',
-  location: 'Pointe-Noire, Congo',
+  location: 'République du Congo',
   tagline: 'Ingénierie, gestion de projet et optimisation des processus industriels.',
   resume: '/resume.pdf',
   bio: [
@@ -35,7 +35,7 @@ export const ABOUT_STATS = [
 export const NAV_LINKS = [
   { id: 'about', label: 'À Propos' },
   { id: 'skills', label: 'Compétences' },
-  { id: 'projects', label: 'Expérience' },
+  { id: 'projects', label: 'Expériences' },
   { id: 'services', label: 'Services' },
   { id: 'contact', label: 'Contact' }
 ];
