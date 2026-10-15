@@ -23,7 +23,7 @@ export const ROLES = [
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com',
-  linkedin: 'www.linkedin.com/in/gash-dieuveil-koumba-520a07330',
+  linkedin: 'https://www.linkedin.com/in/gash-dieuveil-koumba-520a07330',
   twitter: 'https://twitter.com',
   dribbble: 'https://dribbble.com'
 };
