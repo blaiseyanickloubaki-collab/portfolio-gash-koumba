@@ -1,61 +1,46 @@
 import React from 'react';
 
+// Bleu acier du client (#7ca7d1)
+const BLUE_STOPS = [
+  { color: 'rgba(124, 167, 209, 0.25)', stop: '100%' },
+  { color: 'rgba(124, 167, 209, 0.45)', stop: '100%' },
+  { color: 'rgba(124, 167, 209, 0.5)', stop: '100%' },
+  { color: 'rgba(124, 167, 209, 0.45)', stop: '100%' },
+  { color: 'rgba(124, 167, 209, 0.25)', stop: '100%' },
+];
+
 const RadialGradientBackground = ({ variant = 'hero', gradients = [] }) => {
   const variants = {
     hero: [
       {
         position: 'top-1 left-1 -translate-x-1/2 -translate-y-1/2',
         size: 'w-[1400px] h-[1400px]',
-        colors: [
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.5)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-        ],
+        colors: BLUE_STOPS,
         blur: '0px',
-        opacity: 0.5,
+        opacity: 0.25,
       },
       {
         position: 'top-1 left-1',
         size: 'w-[1400px] h-[1400px]',
-        colors: [
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.5)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-        ],
+        colors: BLUE_STOPS,
         blur: '0px',
-        opacity: 0.5,
+        opacity: 0.25,
       },
       {
         position: 'bottom-1 right-1',
         size: 'w-[1400px] h-[1400px]',
-        colors: [
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.5)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-        ],
+        colors: BLUE_STOPS,
         blur: '0px',
-        opacity: 0.5,
+        opacity: 0.25,
       },
     ],
     about: [
       {
         position: 'bottom-0 -right-[35%]',
         size: 'w-[700px] h-[700px]',
-        colors: [
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.5)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.45)', stop: '100%' },
-          { color: 'rgba(141, 255, 105, 0.25)', stop: '100%' },
-        ],
+        colors: BLUE_STOPS,
         blur: '0px',
-        opacity: 0.5,
+        opacity: 0.25,
       },
     ],
   };

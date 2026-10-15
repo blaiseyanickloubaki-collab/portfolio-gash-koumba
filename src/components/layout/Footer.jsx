@@ -1,9 +1,8 @@
 import React from 'react';
-import { Mail, MapPin, Heart } from 'lucide-react';
+import { Mail, MapPin, Phone, Heart } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS, NAV_LINKS } from '../../utils/constants';
 import FadeIn from '../animations/FadeIn';
 
-// Composant pour afficher les logos SVG officiels des réseaux sociaux
 const SocialIcon = ({ name }) => {
   switch (name) {
     case 'github':
@@ -37,31 +36,30 @@ const SocialIcon = ({ name }) => {
 
 const Footer = () => {
   return (
-    <footer className="relative bg-black text-white border-t border-white/10 overflow-hidden">
-      {/* Background Glows */}
+    // CHANGÉ : bg-black -> bg-bg, bordure -> border-line
+    <footer className="relative bg-bg text-white border-t border-line overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 opacity-50 blur-[120px] rounded-full" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-primary/10 opacity-50 blur-[120px] rounded-full" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-blue/10 opacity-50 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        {/* Grille à 3 colonnes */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          
-          {/* Colonne 1 : Logo, Tagline & Cartes Contact */}
+
+          {/* Colonne 1 */}
           <FadeIn delay={0}>
             <div className="space-y-6">
               <div className="space-y-4">
                 <h3 className="text-2xl font-bold tracking-tight text-primary">
-                  {PERSONAL_INFO.name.split(' ')[0]}
+                  {PERSONAL_INFO.name}
                 </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
+                <p className="text-muted text-sm leading-relaxed">
                   {PERSONAL_INFO.tagline}
                 </p>
               </div>
 
               <div className="space-y-3">
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 flex items-center gap-3">
+                <div className="p-4 rounded-2xl bg-panel border border-line hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                     <Mail className="w-4 h-4" />
                   </div>
@@ -70,25 +68,41 @@ const Footer = () => {
                   </a>
                 </div>
 
-                <div className="p-4 rounded-2xl bg-white/5 border border-white/10 hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 flex items-center gap-3">
+                {/* NOUVEAU : téléphones */}
+                <div className="p-4 rounded-2xl bg-panel border border-line hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 flex items-center gap-3">
+                  <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                    <Phone className="w-4 h-4" />
+                  </div>
+                  <div className="flex flex-col text-sm text-white/80">
+                    {PERSONAL_INFO.phones.map((phone) => (
+                      <a
+                        key={phone}
+                        href={`tel:${phone.replace(/\s/g, '')}`}
+                        className="hover:text-primary transition-colors"
+                      >
+                        {phone}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-4 rounded-2xl bg-panel border border-line hover:bg-primary/10 hover:border-primary/40 transition-all duration-300 flex items-center gap-3">
                   <div className="w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                     <MapPin className="w-4 h-4" />
                   </div>
-                  <span className="text-sm text-white/80">
-                    {PERSONAL_INFO.location}
-                  </span>
+                  <span className="text-sm text-white/80">{PERSONAL_INFO.location}</span>
                 </div>
               </div>
             </div>
           </FadeIn>
 
-          {/* Colonne 2 : Liens Rapides */}
+          {/* Colonne 2 */}
           <FadeIn delay={100}>
             <div className="space-y-4">
               <h4 className="text-sm font-semibold tracking-wider uppercase text-white">
-                Liens Rapides
+                Liens rapides
               </h4>
-              <ul className="space-y-3 text-sm text-white/60 list-disc list-inside">
+              <ul className="space-y-3 text-sm text-muted list-disc list-inside marker:text-primary">
                 {NAV_LINKS.map((link) => (
                   <li key={link.id}>
                     <a
@@ -103,37 +117,39 @@ const Footer = () => {
             </div>
           </FadeIn>
 
-          {/* Colonne 3 : Restez Connecté */}
+          {/* Colonne 3 */}
           <FadeIn delay={200}>
             <div className="space-y-4">
               <h4 className="text-sm font-semibold tracking-wider uppercase text-white">
-                Restez Connecté
+                Restez connecté
               </h4>
-              <p className="text-white/60 text-sm leading-relaxed">
-                Collaborons ensemble pour donner vie à vos projets d'ingénierie.
+              <p className="text-muted text-sm leading-relaxed">
+                Un projet EPC, une application ou une formation à mettre en place ? Échangeons sur vos besoins.
               </p>
               <div className="flex items-center gap-3 pt-2">
-                {Object.entries(SOCIAL_LINKS).map(([platform, url]) => (
-                  <a
-                    key={platform}
-                    href={url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`Se connecter via ${platform}`}
-                    className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
-                  >
-                    <SocialIcon name={platform} />
-                  </a>
-                ))}
+                {/* CHANGÉ : seul LinkedIn est affiché */}
+                {Object.entries(SOCIAL_LINKS)
+                  .filter(([platform]) => platform === 'linkedin')
+                  .map(([platform, url]) => (
+                    <a
+                      key={platform}
+                      href={url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Se connecter via LinkedIn"
+                      className="w-10 h-10 rounded-xl bg-panel border border-line flex items-center justify-center text-white/70 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
+                    >
+                      <SocialIcon name={platform} />
+                    </a>
+                  ))}
               </div>
             </div>
           </FadeIn>
-
         </div>
 
-        {/* Copyright & Bas de page */}
+        {/* Bas de page */}
         <FadeIn delay={300}>
-          <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/50">
+          <div className="pt-8 border-t border-line flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-dim">
             <p>
               &copy; {new Date().getFullYear()} {PERSONAL_INFO.name}. Tous droits réservés.
             </p>
@@ -142,7 +158,6 @@ const Footer = () => {
             </p>
           </div>
         </FadeIn>
-
       </div>
     </footer>
   );

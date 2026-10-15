@@ -4,128 +4,83 @@ import * as Icons from 'lucide-react';
 import FadeIn from "../animations/FadeIn";
 
 const Skills = () => {
-  // Regroupement dynamique selon les 3 axes majeurs
-  const skillCategories = {
-    'Automatisme & Supervision': skills.filter(s => [
-      'Commande & API (Ladder, FBD, ST)', 'Supervision des Processus', 
-      'Schémas P&ID & Boucles', 'Capteurs & Instrumentation', 'Réseaux Industriels'
-    ].includes(s.name)),
-    
-    'Gestion de Projet & Ingénierie': skills.filter(s => [
-      'Gestion de Projets EPC', 'Planification (MS Project)', 
-      'Suivi Budgétaire & Pilotage', 'Dessin Technique (AutoCAD)', 'Gestion de Stocks & Logistique'
-    ].includes(s.name)),
-    
-    'Informatique & Développement': skills.filter(s => [
-      'Python', 'PHP & Web Development', 'Bases de Données (SQL)', 
-      'Java, Dart & Flutter', 'Maintenance & IT Réseaux'
-    ].includes(s.name)),
-  };
-
-  const getProficiencyLevel = (level) => {
-    const levels = {
-      'Expert': 95,
-      'Advanced': 80,
-      'Intermediate': 65,
-    };
-    return levels[level] || 50;
-  };
-
-  const getLevelColor = (level) => {
-    const colors = {
-      'Expert': 'text-[#8DFF69] bg-[#8DFF69]/20 border-[#8DFF69]/30',
-      'Advanced': 'text-cyan-400 bg-cyan-500/20 border-cyan-500/30',
-      'Intermediate': 'text-emerald-400 bg-emerald-500/20 border-emerald-500/30',
-    };
-    return colors[level] || 'text-gray-400 bg-gray-500/20 border-gray-500/30';
-  };
-
-  const getLevelLabelInFrench = (level) => {
-    const labels = {
-      'Expert': 'Expert',
-      'Advanced': 'Avancé',
-      'Intermediate': 'Intermédiaire',
-    };
-    return labels[level] || level;
-  };
-
   return (
-    <section id="skills" className="relative py-20 bg-black overflow-hidden">
-      {/* Background Gradients */}
+    // CHANGÉ : bg-black -> bg-bg
+    <section id="skills" className="relative py-20 bg-bg overflow-hidden">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
+        <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-blue/10 rounded-full blur-3xl opacity-50" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <FadeIn delay={100}>
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 border border-primary/30 rounded-full mb-6">
-              <Icons.Sparkles className="w-4 h-4 text-primary" />
-              <span className="text-sm text-primary font-medium">Mon Expertise</span>
+              <Icons.Layers className="w-4 h-4 text-primary" />
+              <span className="text-sm text-primary font-medium">Expertises</span>
             </div>
             <h2 className="text-4xl lg:text-5xl font-normal text-white mb-4">
-              Compétences & Tech Stack
+              Mes 5 pôles d'expertise
             </h2>
-            <p className="text-lg text-white/60 max-w-2xl mx-auto">
-              Aperçu complet de mes domaines de maîtrise en automatisme, gestion EPC et informatique
+            <p className="text-lg text-muted max-w-2xl mx-auto">
+              Des compétences complémentaires, toutes mises en pratique sur le terrain, en entreprise ou en freelance.
             </p>
           </div>
         </FadeIn>
 
-        {/* Categories Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {Object.entries(skillCategories).map(([category, categorySkills], categoryIndex) => (
-            <FadeIn key={category} delay={categoryIndex * 100}>
-              <div className="relative bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group h-full">
-                <div className="flex items-center gap-3 mb-6 pb-4 border-b border-white/10">
-                  <div className="w-1 h-8 bg-linear-to-b from-primary/30 to-primary/10 rounded-full"></div>
-                  <h3 className="text-xl font-medium text-white">{category}</h3>
-                </div>
-
-                {/* Skills List */}
-                <div className="space-y-5">
-                  {categorySkills.map((skill) => {
-                    const IconComponent = Icons[skill.icon] || Icons.Code2;
-                    const proficiency = getProficiencyLevel(skill.level);
-
-                    return (
-                      <div key={skill.id} className="space-y-2">
-                        <div className="flex items-center justify-between">
-                          <div className="flex items-center gap-3">
-                            <div className="p-2 bg-white/5 rounded-lg">
-                              <IconComponent className="w-4 h-4 text-primary" />
-                            </div>
-                            <div>
-                              <div className="text-sm font-medium text-white">
-                                {skill.name}
-                              </div>
-                              <div className="text-xs text-white/50">
-                                {skill.experience}
-                              </div>
-                            </div>
-                          </div>
-                          <span className={`text-xs px-2 py-1 rounded-full border ${getLevelColor(skill.level)}`}>
-                            {getLevelLabelInFrench(skill.level)}
-                          </span>
-                        </div>
-
-                        {/* Proficiency Bar */}
-                        <div className="relative h-1.5 bg-white/5 rounded-full overflow-hidden">
-                          <div
-                            className="absolute top-0 left-0 h-full bg-linear-to-r from-primary/10 to-primary/80 rounded-full transition-all duration-1000 ease-out"
-                            style={{ width: `${proficiency}%` }}
-                          />
-                        </div>
+        {/* 6 colonnes : 3 cartes de 2 + 2 cartes de 3 */}
+        <div className="grid grid-cols-1 lg:grid-cols-6 gap-8">
+          {skills.map((pole, index) => {
+            const IconComponent = Icons[pole.icon] || Icons.Code2;
+            return (
+              <div
+                key={pole.id}
+                className={pole.wide ? 'lg:col-span-3' : 'lg:col-span-2'}
+              >
+                <FadeIn delay={index * 100}>
+                  <div className="relative bg-panel border border-line rounded-2xl p-6 hover:border-primary/30 transition-all duration-300 group h-full">
+                    <div className="flex items-center gap-3 mb-6 pb-4 border-b border-line">
+                      <div className="p-3 bg-primary/10 border border-primary/30 rounded-xl">
+                        <IconComponent className="w-5 h-5 text-primary" />
                       </div>
-                    );
-                  })}
-                </div>
+                      <div>
+                        <small className="block text-[11.5px] tracking-widest uppercase text-primary font-semibold">
+                          {pole.pole}
+                        </small>
+                        <h3 className="text-lg font-medium text-white">{pole.title}</h3>
+                      </div>
+                    </div>
 
-                <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                    <ul className="space-y-2.5 mb-5">
+                      {pole.items.map((item) => (
+                        <li key={item} className="relative pl-5 text-sm text-white/80 leading-relaxed">
+                          <span className="absolute left-0.5 top-[7px] w-[7px] h-[7px] rounded-sm bg-primary rotate-45" />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <div className="flex flex-wrap gap-2">
+                      {pole.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className={`text-xs px-2.5 py-1 rounded-md border ${
+                            tag.includes('IA')
+                              ? 'text-[#ffd9c6] bg-primary/10 border-primary/30'
+                              : 'text-[#d3e1f0] bg-blue/10 border-blue/25'
+                          }`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="absolute inset-0 bg-linear-to-br from-primary/0 to-primary/5 group-hover:from-primary/5 group-hover:to-primary/5 rounded-2xl transition-all duration-300 pointer-events-none"></div>
+                  </div>
+                </FadeIn>
               </div>
-            </FadeIn>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

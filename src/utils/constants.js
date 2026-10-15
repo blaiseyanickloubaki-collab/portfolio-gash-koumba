@@ -1,16 +1,25 @@
 export const PERSONAL_INFO = {
   name: 'Gash Dieuveil KOUMBA',
-  title: 'Ingénieur Informaticien Industriel – Chef de Projet',
+  title: 'Ingénieur des travaux en Automatisme & Informatique Industrielle',
   email: 'koumbagash@gmail.com',
-  location: 'République du Congo',
-  tagline: 'Ingénierie, gestion de projet et optimisation des processus industriels.',
+  phones: ['+242 06 564 66 69', '+242 04 447 87 43'],
+  location: 'Pointe-Noire, République du Congo',
+  tagline: 'E&I · Automatisme DCS · Gestion de projets · Développement Full Stack · Formation',
   resume: '/resume.pdf',
   bio: [
-    "Congolais extrêmement déterminé, je m’inscris comme un acteur de développement et d’optimisation à divers métiers liés à l’ingénierie, la gestion et l’industrie.",
-    "Je suis dynamique, pragmatique, avec une capacité d’adaptation, un esprit d’analyse et de synthèse, un sens de la responsabilité et de la persévérance.",
-    "Je suis doté d’un bon esprit d’équipe et d’intégration."
+    "Ingénieur des travaux (Bac+4) en Génie Électrique & Informatique Industrielle, j'interviens depuis 2023 chez Rosetti Congo sur des projets EPC pétroliers onshore, comme Assistant Chef de Projet & Planificateur et comme électro-instrumentiste sur site.",
+    "En parallèle, je conçois en freelance des applications web, mobiles et desktop, en y intégrant de l'intelligence artificielle (vision par ordinateur, détection d'objets). Je transmets aussi mes compétences comme formateur auprès d'instituts universitaires et de professionnels.",
+    "Rigoureux, pragmatique et à l'aise en équipe pluridisciplinaire, je m'adapte vite aux environnements industriels exigeants."
   ]
 };
+
+export const ROLES = [
+  'Technicien E&I',
+  'Automaticien softwariste (PLC / DCS)',
+  'Planificateur & Chef de projet',
+  'IT & Développeur Full Stack',
+  'Formateur'
+];
 
 export const SOCIAL_LINKS = {
   github: 'https://github.com',
@@ -20,22 +29,24 @@ export const SOCIAL_LINKS = {
 };
 
 export const STATS = [
-  { label: 'Projets Pilotés', value: '7+' },      // Rosetti Congo (Litchendjili, Torchère Mboundi...)[cite: 17]
-  { label: 'Années d’Expérience', value: '5+' },  // Expériences cumulées depuis 2020[cite: 15, 17]
-  { label: 'Compétences & Outils', value: '15+' },// Automatisme, P&ID, MS Project, Python, PHP...
-  { label: 'Formations & Diplômes', value: '6+' }  // Master, Licence, BTS + Formations certifiantes[cite: 14, 17]
+  { label: 'Projets EPC pilotés', value: '7' },
+  { label: 'En projets Oil & Gas', value: '3 ans' },
+  { label: "Pôles d'expertise", value: '5' },
+  { label: 'Ingénieur des travaux', value: 'Bac+4' }
 ];
 
 export const ABOUT_STATS = [
-  { label: 'Projets EPC Pilotés', value: '7+' },
-  { label: 'Années d’Expérience', value: '5+' },
-  { label: 'Projets Réussis', value: '100%' }
+  { label: 'Projets EPC pilotés', value: '7' },
+  { label: 'En projets Oil & Gas', value: '3 ans' },
+  { label: "Pôles d'expertise", value: '5' }
 ];
 
 export const NAV_LINKS = [
-  { id: 'about', label: 'À Propos' },
-  { id: 'skills', label: 'Compétences' },
-  { id: 'projects', label: 'Expériences' },
+  { id: 'about', label: 'À propos' },
+  { id: 'skills', label: 'Expertises' },
+  { id: 'experience', label: 'Expériences' },
+  { id: 'projects', label: 'Projets' },
+  { id: 'education', label: 'Formation' },
   { id: 'services', label: 'Services' },
   { id: 'contact', label: 'Contact' }
 ];

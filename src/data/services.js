@@ -1,38 +1,45 @@
 export const services = [
   {
     id: 1,
-    icon: 'Briefcase',
-    title: 'Gestion & Pilotage de Projets EPC',
-    description: 'Planification sous MS Project, contrôle qualité, suivi budgétaire, coordination des équipes terrain et reporting d\'avancement pour projets industriels pétroliers.'
+    icon: 'Gauge',
+    title: 'Travaux Électricité-Instrumentation',
+    description: "Lecture P&ID et schémas de boucle, câblage et raccordement d'instrumentation, mise en conformité d'équipements : skids, vannes, LT (Level Transmitter), LG (Level Gauge)…",
+    tags: ['E&I', 'P&ID', 'Câblage'],
   },
   {
     id: 2,
     icon: 'Cpu',
-    title: 'Automatisme & Supervision Industrielle',
-    description: 'Programmation d\'automates (Ladder, FBD, ST), développement d\'interfaces IHM/SCADA, réglage de régulateurs et mise en service de systèmes automatisés.'
+    title: 'Automatisme & systèmes DCS',
+    description: "Configuration et exploitation de systèmes DCS, programmation d'automates en Ladder, FBD et Structured Text, supervision des procédés.",
+    tags: ['DCS', 'PLC', 'Supervision'],
   },
   {
     id: 3,
-    icon: 'Sliders',
-    title: 'Instrumentation & Inspection Technique',
-    description: 'Lecture et vérification de schémas P&ID, suivi de câblage d\'instrumentation, test de boucle et contrôle de conformité des vannes et skids de mesure.'
+    icon: 'Calendar',
+    title: 'Planification & gestion de projet',
+    description: "Plannings projet sous MS Project et Primavera P6, planification de la maintenance sous SAP PM, suivi budgétaire et reporting d'avancement.",
+    tags: ['MS Project', 'Primavera P6', 'SAP PM'],
   },
   {
     id: 4,
-    icon: 'Terminal',
-    title: 'Développement de Logiciels & Reporting',
-    description: 'Conception d\'outils informatiques sur mesure (Python, PHP, SQL) pour la digitalisation des processus, la gestion de données et la création de tableaux de bord.'
+    icon: 'Code',
+    title: 'Applications web, mobiles & desktop',
+    description: 'Développement full stack sur mesure en freelance pour digitaliser vos processus : outils de gestion, plateformes et applications.',
+    tags: ['PHP / SQL', 'Flutter', 'Python'],
   },
   {
     id: 5,
-    icon: 'Server',
-    title: 'Administration Réseaux & Infrastructure IT',
-    description: 'Installation et maintenance de parcs informatiques, gestion de baies et équipements réseaux industriels, administration de bases de données et support.'
+    icon: 'Eye',
+    title: 'Intelligence Artificielle appliquée',
+    description: "Intégration de l'IA dans vos applications, modèles de détection d'objets et solutions de vision par ordinateur.",
+    tags: ['Vision', "Détection d'objets", 'ML'],
+    accent: true,
   },
   {
     id: 6,
-    icon: 'FileCheck',
-    title: 'Audit, Conseil & Formation Technique',
-    description: 'Modélisation des flux de travail, audits de conformité technique et formation des utilisateurs pour l\'optimisation des outils de gestion opérationnels.'
-  }
+    icon: 'Presentation',
+    title: 'Formation & accompagnement',
+    description: 'Formations pour instituts universitaires et entreprises : Python et IA, Excel avancé, gestion de stocks. Réseaux et support IT.',
+    tags: ['Python & IA', 'Excel', 'Support IT'],
+  },
 ];

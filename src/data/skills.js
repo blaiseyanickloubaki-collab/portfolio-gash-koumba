@@ -1,22 +1,70 @@
 export const skills = [
-  // --- Automatisme & Supervision ---
-  { id: 1, name: 'Commande & API (Ladder, FBD, ST)', icon: 'Cpu', level: 'Expert', experience: '5+ ans' },
-  { id: 2, name: 'Supervision des Processus', icon: 'Layers', level: 'Expert', experience: '4+ ans' },
-  { id: 3, name: 'Schémas P&ID & Boucles', icon: 'FileText', level: 'Advanced', experience: '3+ ans' },
-  { id: 4, name: 'Capteurs & Instrumentation', icon: 'Sliders', level: 'Advanced', experience: '4+ ans' },
-  { id: 5, name: 'Réseaux Industriels', icon: 'Network', level: 'Advanced', experience: '4+ ans' },
-
-  // --- Gestion de Projet & Ingénierie ---
-  { id: 6, name: 'Gestion de Projets EPC', icon: 'Briefcase', level: 'Expert', experience: '3+ ans' },
-  { id: 7, name: 'Planification (MS Project)', icon: 'Calendar', level: 'Expert', experience: '3+ ans' },
-  { id: 8, name: 'Suivi Budgétaire & Pilotage', icon: 'BarChart3', level: 'Advanced', experience: '3+ ans' },
-  { id: 9, name: 'Dessin Technique (AutoCAD)', icon: 'PenTool', level: 'Advanced', experience: '3+ ans' },
-  { id: 10, name: 'Gestion de Stocks & Logistique', icon: 'Package', level: 'Advanced', experience: '4+ ans' },
-
-  // --- Informatique & Développement ---
-  { id: 11, name: 'Python', icon: 'Code2', level: 'Advanced', experience: '3+ ans' },
-  { id: 12, name: 'PHP & Web Development', icon: 'Globe', level: 'Advanced', experience: '4+ ans' },
-  { id: 13, name: 'Bases de Données (SQL)', icon: 'Database', level: 'Advanced', experience: '4+ ans' },
-  { id: 14, name: 'Java, Dart & Flutter', icon: 'Smartphone', level: 'Intermediate', experience: '2+ ans' },
-  { id: 15, name: 'Maintenance & IT Réseaux', icon: 'Server', level: 'Expert', experience: '5+ ans' },
+  {
+    id: 1,
+    pole: 'Pôle 01',
+    title: 'Technicien E&I',
+    icon: 'Gauge',
+    items: [
+      'Lecture de P&ID et de schémas de boucle',
+      "Câblage et raccordement d'instrumentation",
+      'Capteurs, actionneurs et fins de course',
+      'Mise en conformité des installations E&I',
+    ],
+    tags: ['P&ID', 'Instrumentation', 'AutoCAD'],
+  },
+  {
+    id: 2,
+    pole: 'Pôle 02',
+    title: 'Automaticien softwariste (PLC / DCS)',
+    icon: 'Cpu',
+    items: [
+      'Configuration et exploitation de systèmes DCS',
+      "Programmation d'automates : Ladder, FBD, Structured Text",
+      'Supervision des procédés industriels',
+      'Réseaux et bus de terrain industriels',
+    ],
+    tags: ['DCS', 'PLC', 'LD · FBD · ST'],
+  },
+  {
+    id: 3,
+    pole: 'Pôle 03',
+    title: 'Planificateur & Chef de projet',
+    icon: 'Calendar',
+    items: [
+      'Plannings sous MS Project et Primavera P6 (baseline et mises à jour)',
+      'Planification des tâches de maintenance sous SAP PM',
+      'Suivi budgétaire et maîtrise des coûts',
+      "Reporting d'avancement hebdo / mensuel",
+      'Coordination des équipes, logistique et stocks',
+    ],
+    tags: ['MS Project', 'Primavera P6', 'SAP PM'],
+  },
+  {
+    id: 4,
+    pole: 'Pôle 04',
+    title: 'IT & Développeur Full Stack',
+    icon: 'Code2',
+    wide: true,
+    items: [
+      'Applications web, mobiles et desktop, du front-end à la base de données',
+      "Intégration de l'IA : vision par ordinateur et détection d'objets",
+      'Administration réseaux, serveurs et bases de données SQL',
+      'Maintenance du parc informatique et support utilisateurs',
+    ],
+    tags: ['PHP', 'Flutter / Dart', 'Python', 'Java', 'SQL', 'IA · Vision'],
+  },
+  {
+    id: 5,
+    pole: 'Pôle 05',
+    title: 'Formateur',
+    icon: 'Presentation',
+    wide: true,
+    items: [
+      "Algorithmique, programmation Python et initiation à l'IA",
+      'Excel avancé : reporting et tableaux de bord',
+      'Logistique et gestion de stocks',
+      'Publics : étudiants en Licence et professionnels en entreprise',
+    ],
+    tags: ['Pédagogie', 'Python', 'Excel', 'Gestion de stocks'],
+  },
 ];

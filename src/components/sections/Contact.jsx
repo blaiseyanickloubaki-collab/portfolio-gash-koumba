@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, Send, MessageSquare } from 'lucide-react';
+import { Mail, MapPin, Send, MessageSquare, Phone, Download } from 'lucide-react';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '../../utils/constants';
 import FadeIn from '../animations/FadeIn';
 
-// Composant pour afficher les logos SVG officiels
 const SocialIcon = ({ name }) => {
   switch (name) {
     case 'github':
@@ -29,20 +28,15 @@ const SocialIcon = ({ name }) => {
   }
 };
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+const inputClass =
+  'w-full px-4 py-3 rounded-xl bg-bg2 border border-line text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm';
 
+const Contact = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const [status, setStatus] = useState({ type: '', message: '' });
 
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
@@ -61,7 +55,7 @@ const Contact = () => {
 
     setStatus({
       type: 'success',
-      message: "Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.",
+      message: 'Message envoyé avec succès ! Je vous répondrai dans les plus brefs délais.',
     });
     setFormData({ name: '', email: '', message: '' });
 
@@ -69,37 +63,35 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" className="relative py-20 bg-black overflow-hidden">
-      {/* Background Glow */}
+    // CHANGÉ : bg-black -> bg-bg
+    <section id="contact" className="relative py-20 bg-bg overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-primary/10 blur-[120px] rounded-full" />
       </div>
 
       <div className="relative max-w-7xl mx-auto px-6">
-        {/* Header Centré */}
         <FadeIn delay={0}>
           <div className="flex flex-col items-center text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-medium mb-6">
               <MessageSquare className="w-3.5 h-3.5" />
-              <span>Contactez-moi</span>
+              <span>Contact</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-semibold text-white tracking-tight mb-4">
-              Travaillons Ensemble
+              Travaillons <span className="text-primary">ensemble</span>
             </h2>
-            <p className="text-white/60 text-base sm:text-lg max-w-xl">
-              Un projet industriel, une mission d'ingénierie ou une collaboration ? Discutons-en dès aujourd'hui.
+            <p className="text-muted text-base sm:text-lg max-w-xl">
+              Ouvert aux postes en E&amp;I, automatisme DCS et planification de projets, ainsi qu'aux missions freelance de développement et de formation — au Congo et à l'international.
             </p>
           </div>
         </FadeIn>
 
-        {/* Grille Principale */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start max-w-5xl mx-auto">
-          {/* Colonne Gauche : Formulaire */}
+          {/* Formulaire */}
           <FadeIn delay={100}>
-            <div className="p-8 sm:p-10 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-md">
+            <div className="p-8 sm:p-10 rounded-3xl bg-panel border border-line backdrop-blur-md">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-xs font-medium text-white/70 mb-2">
+                  <label htmlFor="name" className="block text-xs font-medium text-muted mb-2">
                     Nom / Entreprise
                   </label>
                   <input
@@ -108,13 +100,13 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm"
+                    className={inputClass}
                     placeholder="Votre nom ou nom d'entreprise"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-xs font-medium text-white/70 mb-2">
+                  <label htmlFor="email" className="block text-xs font-medium text-muted mb-2">
                     Email
                   </label>
                   <input
@@ -123,13 +115,13 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm"
+                    className={inputClass}
                     placeholder="votre.email@exemple.com"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-medium text-white/70 mb-2">
+                  <label htmlFor="message" className="block text-xs font-medium text-muted mb-2">
                     Message
                   </label>
                   <textarea
@@ -138,16 +130,17 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-white/30 focus:outline-none focus:border-primary/50 transition-all duration-300 text-sm resize-none"
+                    className={`${inputClass} resize-none`}
                     placeholder="Décrivez votre besoin ou votre projet..."
                   />
                 </div>
 
+                {/* CHANGÉ : text-black -> texte foncé de la charte */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 px-6 rounded-xl bg-primary text-black font-semibold text-sm hover:bg-primary/90 transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
+                  className="w-full py-3.5 px-6 rounded-xl bg-primary text-[#1a0b03] font-semibold text-sm hover:bg-primary-dark transition-all duration-300 flex items-center justify-center gap-2 group cursor-pointer"
                 >
-                  <span>Envoyer le Message</span>
+                  <span>Envoyer le message</span>
                   <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                 </button>
 
@@ -166,64 +159,95 @@ const Contact = () => {
             </div>
           </FadeIn>
 
-          {/* Colonne Droite : Contact Info */}
+          {/* Infos de contact */}
           <FadeIn delay={200}>
             <div className="space-y-8 lg:pt-4">
               <div>
-                <h3 className="text-xl font-semibold text-white mb-3">
-                  Restons en Contact
-                </h3>
-                <p className="text-white/60 text-sm leading-relaxed">
-                  Toujours ouvert à l'étude de nouvelles opportunités professionnelles, de missions d'ingénierie EPC ou de projets en automatisme et informatique. N'hésitez pas à me contacter !
+                <h3 className="text-xl font-semibold text-white mb-3">Restons en contact</h3>
+                <p className="text-muted text-sm leading-relaxed">
+                  Un projet EPC, une application ou une formation à mettre en place ? Échangeons sur vos besoins.
                 </p>
               </div>
 
               <div className="space-y-4">
-                {/* Mail Card */}
+                {/* Email */}
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4 group hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-pointer block"
+                  className="p-5 rounded-2xl bg-panel border border-line flex items-center gap-4 group hover:border-primary/40 hover:bg-primary/10 transition-all duration-300 cursor-pointer"
                 >
-                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-black transition-colors duration-300">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0 group-hover:bg-primary group-hover:text-[#1a0b03] transition-colors duration-300">
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/40 mb-0.5">Email</p>
+                    <p className="text-xs text-dim mb-0.5">Email</p>
                     <span className="text-sm text-white font-medium group-hover:text-primary transition-colors">
                       {PERSONAL_INFO.email}
                     </span>
                   </div>
                 </a>
 
-                {/* Location Card */}
-                <div className="p-5 rounded-2xl bg-white/5 border border-white/10 flex items-center gap-4">
+                {/* NOUVEAU : Téléphone / WhatsApp */}
+                <div className="p-5 rounded-2xl bg-panel border border-line flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-dim mb-0.5">Téléphone / WhatsApp</p>
+                    <div className="flex flex-wrap gap-x-3 text-sm text-white font-medium">
+                      {PERSONAL_INFO.phones.map((phone) => (
+                        <a
+                          key={phone}
+                          href={`tel:${phone.replace(/\s/g, '')}`}
+                          className="hover:text-primary transition-colors"
+                        >
+                          {phone}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+
+                {/* Localisation */}
+                <div className="p-5 rounded-2xl bg-panel border border-line flex items-center gap-4">
                   <div className="w-10 h-10 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center text-primary flex-shrink-0">
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/40 mb-0.5">Localisation</p>
-                    <p className="text-sm text-white font-medium">
-                      {PERSONAL_INFO.location}
-                    </p>
+                    <p className="text-xs text-dim mb-0.5">Mobile pour missions sur site</p>
+                    <p className="text-sm text-white font-medium">{PERSONAL_INFO.location}</p>
                   </div>
                 </div>
               </div>
 
-              {/* Social Links */}
+              {/* CV + réseaux */}
               <div>
-                <p className="text-xs text-white/40 mb-3">Retrouvez-moi sur</p>
-                <div className="flex items-center gap-3">
-                  {Object.entries(SOCIAL_LINKS).slice(0, 3).map(([platform, url]) => (
-                    <a
-                      key={platform}
-                      href={url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white/70 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
-                    >
-                      <SocialIcon name={platform} />
-                    </a>
-                  ))}
+                <p className="text-xs text-dim mb-3">Retrouvez-moi sur</p>
+                <div className="flex flex-wrap items-center gap-3">
+                  {/* CHANGÉ : seul LinkedIn est affiché (le client n'a que celui-là) */}
+                  {Object.entries(SOCIAL_LINKS)
+                    .filter(([platform]) => platform === 'linkedin')
+                    .map(([platform, url]) => (
+                      <a
+                        key={platform}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="LinkedIn"
+                        className="w-10 h-10 rounded-xl bg-panel border border-line flex items-center justify-center text-white/70 hover:text-primary hover:border-primary/40 hover:bg-primary/10 transition-all duration-300"
+                      >
+                        <SocialIcon name={platform} />
+                      </a>
+                    ))}
+
+                  {/* NOUVEAU : bouton CV */}
+                  <a
+                    href={PERSONAL_INFO.resume}
+                    download
+                    className="inline-flex items-center gap-2 px-5 h-10 rounded-xl bg-primary text-[#1a0b03] text-sm font-semibold hover:bg-primary-dark transition-colors"
+                  >
+                    <Download className="w-4 h-4" />
+                    Télécharger mon CV
+                  </a>
                 </div>
               </div>
             </div>
