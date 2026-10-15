@@ -97,7 +97,7 @@ const Hero = () => {
             </FadeIn>
           </div>
 
-          {/* Right Column - inchangée sauf 2 classes */}
+          {/* Right Column */}
           <FadeIn delay={200}>
             <div className="relative">
               <div className="relative overflow-hidden rounded-2xl aspect-4/5 max-w-[500px] ml-auto group">

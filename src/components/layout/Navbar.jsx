@@ -38,10 +38,13 @@ const Navbar = () => {
           <Code className="w-6 h-6 text-primary" />
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-2xl font-bold whitespace-nowrap bg-linear-to-r from-primary to-primary-dark bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+            className="text-2xl font-bold whitespace-nowrap hover:opacity-80 transition-opacity flex items-center gap-1.5"
             aria-label="home"
           >
-            {PERSONAL_INFO.name}
+            <span className="text-white">Gash Dieuveil</span>
+            <span className="bg-linear-to-r from-primary to-primary-dark bg-clip-text text-transparent">
+              KOUMBA
+            </span>
           </button>
         </div>
 
@@ -116,4 +119,4 @@ const Navbar = () => {
 );
 }
 
-export default Navbar
+export default Navbar;
