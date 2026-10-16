@@ -2,21 +2,21 @@
 export const testimonials = [
   {
     id: 1,
-    //name: 'Jean-Marc Mavoungou', // TODO : vrai nom
+    name: 'Cédric NGOUBY', // TODO : vrai nom
     role: 'Project Manager',
     company: 'Secteur Oil & Gas / EPC',
-    //image: '/images/testimonials/person1.jpg',
-    linkedin: 'https://www.linkedin.com/in/TODO-profil-1', // TODO : vrai lien
+    image: '/images/testimonials/person1.jpg',
+    linkedin: 'https://www.linkedin.com/in/c%C3%A9dric-ngouby-867290108', // TODO : vrai lien
     quote: 'Gash a fait preuve d\'une excellente rigueur dans la planification MS Project et le suivi terrain du projet Litchendjili. Un profil très méthodique.',
     rating: 5
   },
   {
     id: 2,
-    //name: 'Patrick Ngoma', // TODO : vrai nom
+    name: 'Clemente MOSCATELLI', // TODO : vrai nom
     role: 'Responsable Technique',
     company: 'Projets Industriels',
-    //image: '/images/testimonials/person2.jpg',
-    linkedin: 'https://www.linkedin.com/in/TODO-profil-2', // TODO : vrai lien
+    image: '/images/testimonials/person2.jpg',
+    linkedin: 'https://www.linkedin.com/in/clemente-moscatelli-aab4a8129', // TODO : vrai lien
     quote: 'Sa maîtrise des schémas P&ID, des tests de boucles et sa réactivité sur le site ont grandement facilité la réception des vannes et skids de mesure.',
     rating: 5
   },
